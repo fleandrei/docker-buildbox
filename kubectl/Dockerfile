@@ -1,4 +1,4 @@
-FROM alpine:3.15.0
+FROM alpine:3.15.1
 LABEL maintainer="Maxime Sibellas <maxime.sibellas@ekino.com>"
 
 ARG HELM_DIFF_VERSION
