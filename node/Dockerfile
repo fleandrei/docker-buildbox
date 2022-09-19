@@ -1,4 +1,4 @@
-FROM debian:11.2-slim
+FROM debian:11.5-slim
 LABEL maintainer="opensource@ekino.com"
 
 ENV DEBIAN_FRONTEND=noninteractive \
