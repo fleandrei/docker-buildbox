@@ -1,16 +1,22 @@
-FROM python:3.10.3-slim-buster
-
+FROM python:3.10.7-slim-bullseye as base
 LABEL maintainer="Axel Pavageau <axel.pavageau@ekino.com>"
 
-ADD package.json .
+FROM base as base-amd64
+ARG AWSCLI_URL="https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
 
-RUN apt-get update -qq && apt-get install -y wget zip \
+FROM base as base-arm64
+ARG AWSCLI_URL="https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"
+
+FROM base-$TARGETARCH
+WORKDIR /tmp
+
+ADD package.json .
+RUN apt-get update -qq && apt-get install -y wget zip curl \
     && pip install -U pip \
     && pip install pipenv boto3 \
     && apt install -y npm git \
-    && wget "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
-    && unzip awscli-exe-linux-x86_64.zip \
+    && curl ${AWSCLI_URL} -o "awscliv2.zip" \
+    && unzip awscliv2.zip\
     && ./aws/install
-
 RUN npm install \
-    && ln -s /node_modules/cloudsploit/index.js /usr/local/bin/cloudsploit
+    && ln -s /tmp/node_modules/cloudsploit/index.js /usr/local/bin/cloudsploit

@@ -1,15 +1,12 @@
 versions:
   "1":
+    platforms: *base_platforms
     build_args:
-      CI_HELPER_VERSION: *CI_HELPER_VERSION
-      DOCKER_COMPOSE_VERSION: v2.1.1
       GLIBC_VERSION: 2.29-r0
-      PIP_VERSION: 21.2.1
-      TRIVY_VERSION: "0.21.0"
+      TRIVY_VERSION: "0.36.1"
       TASKFILE_VERSION: *TASKFILE_VERSION
     test_config:
       cmd:
-        - *ci_helper_test
         - aws --version
         - az version
         - docker --version

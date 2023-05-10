@@ -5,29 +5,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-  # Ansible
-  - package-ecosystem: "docker"
-    directory: "/ansible"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "docker"
-      - "ansible"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-  - package-ecosystem: "pip"
-    directory: "/ansible/5"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "pip"
-      - "ansible"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
   # AWS
   - package-ecosystem: "docker"
     directory: "/aws"
@@ -60,17 +37,6 @@ updates:
     labels:
       - "dependencies"
       - "docker"
-      - "azure"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-  - package-ecosystem: "pip"
-    directory: "/azure"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "pip"
       - "azure"
     ignore:
       - dependency-name: "*"
@@ -144,17 +110,6 @@ updates:
       - "dind"
   # Golang
   - package-ecosystem: "docker"
-    directory: "/golang/1.16"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "docker"
-      - "golang"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
-  - package-ecosystem: "docker"
     directory: "/golang/1.17"
     schedule:
       interval: "weekly"
@@ -167,6 +122,17 @@ updates:
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
   - package-ecosystem: "docker"
     directory: "/golang/1.18"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "docker"
+      - "golang"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+  - package-ecosystem: "docker"
+    directory: "/golang/1.19"
     schedule:
       interval: "weekly"
     labels:
@@ -196,18 +162,6 @@ updates:
       - "dependencies"
       - "docker"
       - "java"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-  # Kubectl
-  - package-ecosystem: "docker"
-    directory: "/kubectl"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "docker"
-      - "kubectl"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
@@ -248,17 +202,6 @@ updates:
         update-types: ["version-update:semver-major"]
   # Php
   - package-ecosystem: "docker"
-    directory: "/php/7.4"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "docker"
-      - "php"
-    ignore:
-      - dependency-name: "*"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
-  - package-ecosystem: "docker"
     directory: "/php/8.0"
     schedule:
       interval: "weekly"
@@ -280,6 +223,17 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
+  -   package-ecosystem: "docker"
+      directory: "/php/8.2"
+      schedule:
+        interval: "weekly"
+      labels:
+        - "dependencies"
+        - "docker"
+        - "php"
+      ignore:
+        -   dependency-name: "*"
+            update-types: [ "version-update:semver-major", "version-update:semver-minor" ]
   # Platformsh
   - package-ecosystem: "docker"
     directory: "/platformsh"
@@ -357,15 +311,14 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
-  # Ruby
   - package-ecosystem: "docker"
-    directory: "/ruby"
+    directory: "/python/3.11"
     schedule:
       interval: "weekly"
     labels:
       - "dependencies"
       - "docker"
-      - "ruby"
+      - "python"
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
@@ -381,23 +334,15 @@ updates:
     ignore:
       - dependency-name: "*"
         update-types: ["version-update:semver-major"]
-  # Terraform
+  # Tezosqa
   - package-ecosystem: "docker"
-    directory: "/terraform"
+    directory: "/tezosqa"
     schedule:
       interval: "weekly"
     labels:
       - "dependencies"
       - "docker"
-      - "terraform"
+      - "tezosqa"
     ignore:
       - dependency-name: "*"
-        update-types: ["version-update:semver-major"]
-  - package-ecosystem: "pip"
-    directory: "/terraform"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "dependencies"
-      - "pip"
-      - "terraform"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]

@@ -1,11 +1,12 @@
 versions:
-  "3.67":
+  "4":
+    platforms:
+      - linux/amd64
+      - linux/arm64
     build_args:
-      PLATFORMSH_CLI_VERSION: "3.71.0"
-      PLATFORMSH_CLI_SHASUM: "05caf428a7bc4c9bb841e6310f3d6d3c07599bf6f128e4d28dc8f36429d1f759"
+      PLATFORM_VERSION: "4.0.2"
     test_config:
       cmd:
-        - php --version
         - platform --version
         - python --version
         - pip --version

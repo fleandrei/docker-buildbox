@@ -1,6 +1,138 @@
 Versions
 ========
 
+2023-04-30
+----------
+* Ansible : dropping this image.
+* AWS : adding yq, terraform, tfenv and associated tools. Removing boto3. Bumping misc tools' versions
+* Azure : adding yq, terraform, tfenv and associated tools. Bumping misc tools' versions
+* Terraform : dropping this image. Terraform tooling is now included directly in AWS & Azure images
+* Golang : Bump Golang-ci-lint version
+
+2023-03-31
+----------
+* Golang : Creating golang version 1.20
+* PHP: update some packages versions
+
+2023-02-28
+----------
+* AWS: switching from python 3.10 to 3.11
+* Azure: switching from python 3.10 to 3.11
+* Java: upgrade Java images
+* Platform: switching from python 3.8 to 3.11
+
+2023-01-31
+----------
+* Ansible: bumping from 5.x.x to 7.x.x
+* Ansible: switching base image from debian buster to bullseye
+* AWS: bumping kubectl, kustomize, helm, trivy versions
+* AWS: switching base image from debian buster to bullseye
+* Azure: bumping kubectl, kustomize, helm, trivy versions
+* Azure: switching base image from debian buster to bullseye
+* Cloudsploit: switching base image from debian buster to bullseye
+* Dind: bumping kubectl, kustomize, helm, trivy versions
+* PHP: adding support for php 8.2 and removing for 7.4. Php-cs-fixer isn't officially supported in 8.2 as of now, use it with care.
+* Platform: switching to the new 4.x.x Golang CLI
+* Platform: build arm64 docker image
+* Pynode: switching base image from debian buster to bullseye
+* Python: switching base image from debian buster to bullseye
+* Terraform: switching base image from debian buster to bullseye
+* Terraform: bumping to TF 1.3.x. Updating terragrunt & infracost
+* Tezosqa: switching base image from debian buster to bullseye
+
+2022-12-31
+----------
+* Node: Adding jq command
+* Python : adding support for python 3.11
+
+2022-11-30
+----------
+* AWS : Adding kubectl & associated tools
+* AWS : removing taskfile, kube-no-trouble and kube-score
+* Azure : Adding kubectl & associated tools
+* Azure : always install the latest CLI
+* Azure : removing taskfile, kube-no-trouble and kube-score
+* Kubectl : removing this image, the tools are now included in AWS & Azure images
+* PHP : build arm64 docker image
+* Ruby : dropping support for this flavor
+
+2022-10-31
+----------
+* Golang : Updating golangci-lint to 1.49.0 to handle go1.19 & go1.18
+
+2022-09-30
+----------
+* Ansible : Build arm64 docker image
+* Azure : build arm64 azure docker image
+* Chrome : build arm64 docker image
+* Cloudsploit : build arm64 docker image
+* Golang : build arm64 docker image
+* Golang : Remove testfixtures test. Binary does not exist for arch arm64
+* Golang : Remove version 1.17. Image does not exist for arch arm64
+* Golang : Updating Gitleaks to 8.11.2
+* Golang : Updating Go-testfixtures to 3.8.0
+* Golang : Updating Mockgen to 1.6
+* Java : build arm64 docker image
+* Node : build arm64 docker image
+* Percy : build arm64 docker image
+
+2022-08-31
+----------
+
+* AWS : Build arm64 docker image
+* AWS : Fix tagging issue preventing the push of multiple architectures to docker hub
+* Bitcoind : Build arm64 image
+* Bitcoind : Updating to bitcoind to 23.0
+* Golang: adding new 1.19 flavor
+* Java: upgrade Java 11 to 11.0.16 and 17 to 17.0.4
+* Platformsh: updating base image, and CLI to the latest 3.81.x
+
+2022-07-31
+----------
+
+* PHP: updating tools
+* Terraform: bump terraform to 1.2.5, along with associated tools
+* Python SRC : Change python docker module from docker to python-on-whales
+* Python SRC : Build amd64 images with docker buildx
+* Python SRC Config : Add linux/amd64 and linux/arm64 as values for the new config property base_platforms
+* CI : use docker/setup-qemu-action@v2 and docker/setup-buildx-action@v2 as gitflows step actions
+* Images : Only [OCI images](https://github.com/opencontainers/image-spec/blob/main/spec.md) for amd64 architecture are built
+
+
+2022-06-30
+----------
+
+No specific change this month, just standard dependencies updates. Happy summer !
+
+2022-05-31
+----------
+
+* Chrome: removing ci-helper binary
+* Dind: removing ci-helper binary
+* Dind: changing docker-compose installation method to apk.
+* Dind: bumping Trivy's version
+* Golang: removing ci-helper binary
+* Golang: golang 1.16 is now EOL, removing this image's flavor
+* Java: removing ci-helper binary
+* Node: removing ci-helper binary
+* Node: adding new 18.x flavor
+* PHP: removing ci-helper binary
+* Ruby: removing ci-helper binary
+* Sonar: removing ci-helper binary
+* Sonar: updating to sonar-scanner-cli 4.7.x
+* Kubectl: updating to 1.24, along with associated tools
+* Kubectl: adding Trivy, which now supports scanning kubernetes resources
+* Platformsh: updating to the latest 3.79.x CLI
+* Terraform: bump terraform to 1.2.1, along with associated tools
+* Terraform: adding Google Cloud CLI
+
+2022-04-30
+----------
+
+* Tezosqa: Version 1.0 that use version 0.9.0 of smartpy
+* expose docker variables in image building workflow
+* Java: upgrade Java 11 to 11.0.15 and 17 to 17.0.3
+
 2022-03-31
 ----------
 
@@ -14,8 +146,13 @@ Versions
 * Golang: adding new 1.18 flavor
 * Cloudsploit: switch from AWScli v1 to v2
 * Python: dropping support for 3.6, adding support for 3.10
+* Python: switch from AWScli v1 to v2
 * Kubectl: Bumping kubectl to 1.23.x. Updating Helm & misc tools. Removing kubectx & kubens
+* Kubectl: switch from AWScli v1 to v2
 * PyNode: switching from node 12.x to 14.x
+* PyNode: switch from AWScli v1 to v2
+* Terraform: switch from AWScli v1 to v2
+* Java: switch from AWScli v1 to v2
 
 2022-02-28
 ----------
